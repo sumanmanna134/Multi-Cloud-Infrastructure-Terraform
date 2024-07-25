@@ -5,8 +5,10 @@ resource "azurerm_storage_account" "storage_account" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
   network_rules {
-    default_action             = "Deny"
-    virtual_network_subnet_ids = var.subnet_ids
+    default_action = "Deny"
+    ip_rules       = ["49.47.157.72"]
+    # virtual_network_subnet_ids = var.subnet_ids
+
   }
   tags = var.tags
 }

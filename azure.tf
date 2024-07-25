@@ -1,18 +1,3 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "3.113.0"
-    }
-  }
-
-}
-
-provider "azurerm" {
-  skip_provider_registration = true
-  features {}
-}
-
 
 module "rg" {
   source              = "./modules/resource-grp"
@@ -43,9 +28,7 @@ module "storage" {
   subnet_ids           = [module.vnet.subnet_id]
   container_name       = var.container_name
   depends_on           = [module.rg, module.vnet]
-
-
-  tags = var.tags
+  tags                 = var.tags
 }
 
 

@@ -19,14 +19,14 @@ terraform_init() {
 
 terraform_plan() {
     echo "Planning Terraform..."
-    terraform plan --var-file="./tfvars/terraform.tfvars"
+    terraform plan --var-file="./tfvars/terraform.tfvars" -out azinfra.tfplan
     echo "Terraform Plan created."
 }
 
 # Function to apply Terraform
 terraform_apply() {
     echo "Applying Terraform..."
-    terraform apply --var-file="./tfvars/terraform.tfvars"
+    terraform apply azinfra.tfplan
     echo "Terraform applied."
 }
 
