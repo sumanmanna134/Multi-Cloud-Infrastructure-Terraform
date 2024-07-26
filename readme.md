@@ -30,27 +30,27 @@ This repository contains Terraform configurations for provisioning and managing 
 
 4. **Select Cloud Provider**:
 
-   ![alt text](screenshots/start.png)
+   ![alt text](images/Start.png)
 
 5. **Initialize Terraform of Selected Cloud Provider**:
 
-   ![alt text](screenshots/init.png)
+   ![alt text](images/Init.png)
 
 6. **Terraform Plan**:
 
-   ![alt text](screenshots/plan.png)
+   ![alt text](images/plan.png)
 
 7. **Terraform Validate**:
 
-   ![alt text](screenshots/validate.png)
+   ![alt text](images/validate.png)
 
 8. **Terraform Apply**:
 
-   ![alt text](screenshots/apply.png)
+   ![alt text](images/apply.png)
 
 9. **Terraform Destroy**:
 
-   ![alt text](screenshots/destroy.png)
+   ![alt text](images/destroy.png)
 
 ## Directory Structure
 
