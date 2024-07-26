@@ -16,4 +16,4 @@ jobs:
       - name: Destroy Infrastructure
         run: |
           terraform init
-          terraform destroy --var-file="./tfvars/terraform.tfvars" -auto-approve
+          terraform destroy --var-file="https://terraformstorageazaction.blob.core.windows.net/vars/terraform.tfvars?st=2024-07-26T09:55:06Z&se=2024-07-26T17:55:06Z&si=readvar&spr=https&sv=2022-11-02&sr=b&sig=8U%2B0VOnAPQfCvxsNOfoGgSkxCsDKosTdHpKUpaPCAr8%3D" -auto-approve
