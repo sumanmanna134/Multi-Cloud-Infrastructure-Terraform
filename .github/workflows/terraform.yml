@@ -50,4 +50,4 @@ jobs:
       - name: Terraform apply
         id: apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply azinfra.tfplan -auto-approve
+        run: terraform apply azinfra.tfplan
