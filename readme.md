@@ -38,19 +38,19 @@ This repository contains Terraform configurations for provisioning and managing 
 
 6. **Terraform Plan**:
 
-   ![alt text](images/plan.png)
+   ![alt text](images/Plan.png)
 
 7. **Terraform Validate**:
 
-   ![alt text](images/validate.png)
+   ![alt text](images/Validate.png)
 
 8. **Terraform Apply**:
 
-   ![alt text](images/apply.png)
+   ![alt text](images/Apply.png)
 
 9. **Terraform Destroy**:
 
-   ![alt text](images/destroy.png)
+   ![alt text](images/Destroy.png)
 
 ## Directory Structure
 
