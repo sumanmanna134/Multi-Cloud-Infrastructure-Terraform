@@ -47,7 +47,7 @@ jobs:
         run: terraform init
       - name: Terraform plan
         id: plan
-        run: terraform plan --var-file="./tfvars/terraform.tfvars" -out azinfra.tfplan -no-color
+        run: terraform plan --var-file="https://terraformstorageazaction.blob.core.windows.net/vars/terraform.tfvars?st=2024-07-26T09:55:06Z&se=2024-07-26T17:55:06Z&si=readvar&spr=https&sv=2022-11-02&sr=b&sig=8U%2B0VOnAPQfCvxsNOfoGgSkxCsDKosTdHpKUpaPCAr8%3D" -out azinfra.tfplan -no-color
       - name: Terraform apply
         id: apply
         if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
