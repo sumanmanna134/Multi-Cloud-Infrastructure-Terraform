@@ -1,0 +1,1 @@
+availability_zone = "ap-south-1a"
