@@ -7,8 +7,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: ['main']
-  pull_request:
-    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -50,7 +48,7 @@ jobs:
         run: terraform plan --var-file="./tfvars/terraform.tfvars" -out azinfra.tfplan -no-color
 
       - run: echo "event name is:" ${{ github.event_name }}
-      - run: echo "event type is:" ${{ github.event.action }}
+      - run: echo "event type is:" ${{ github.ref }}
 
       # - name: Terraform apply
       #   id: apply
