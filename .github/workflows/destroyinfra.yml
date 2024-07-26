@@ -1,0 +1,19 @@
+name: Destroy Infrastructure
+
+on:
+  workflow_dispatch:
+
+jobs:
+  destroy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: '1.8.3' # Replace with desired Terraform version
+
+      - name: Destroy Infrastructure
+        run: |
+          terraform init
+          terraform destroy --var-file="./tfvars/terraform.tfvars" -auto-approve
