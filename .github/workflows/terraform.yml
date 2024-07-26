@@ -48,7 +48,11 @@ jobs:
       - name: Terraform plan
         id: plan
         run: terraform plan --var-file="./tfvars/terraform.tfvars" -out azinfra.tfplan -no-color
-      - name: Terraform apply
-        id: apply
-        if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
-        run: terraform apply azinfra.tfplan -auto-approve
+
+      - run: echo "event name is:" ${{ github.event_name }}
+      - run: echo "event type is:" ${{ github.event.action }}
+
+      # - name: Terraform apply
+      #   id: apply
+      #   if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
+      #   run: terraform apply azinfra.tfplan -auto-approve
