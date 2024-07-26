@@ -5,6 +5,7 @@ display_menu() {
     echo "Terraform Menu:"
     echo "1. Initialize Terraform"
     echo "2. Plan Terraform"
+    echo "3. Validate Terraform"
     echo "3. Apply Terraform"
     echo "4. Refresh Terraform"
     echo "5. Destroy Terraform"
@@ -15,6 +16,11 @@ terraform_init() {
     echo "Initializing Terraform..."
     terraform init
     echo "Terraform initialized."
+}
+
+terraform_validate(){
+    echo "Validating Terraform Infra"
+    terraform validate
 }
 
 terraform_plan() {
@@ -55,16 +61,21 @@ while true; do
         2)
             terraform_plan
             ;;
+
         3)
-            terraform_apply
+            terraform_validate
             ;;
+        
         4)
             terraform_apply
             ;;
         5)
-            terraform_destroy
+            terraform_refresh
             ;;
         6)
+            terraform_destroy
+            ;;
+        7)
             echo "Exiting..."
             exit 0
             ;;
