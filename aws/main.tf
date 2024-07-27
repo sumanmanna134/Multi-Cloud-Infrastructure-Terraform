@@ -8,7 +8,7 @@ terraform {
 }
 
 module "elb" {
-  source            = "./modules/elb"
+  source            = "../modules/aws-modules/elb"
   availability_zone = var.availability_zone
 
 }

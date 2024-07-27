@@ -1,6 +1,6 @@
 
 module "rg" {
-  source              = "./modules/resource-grp"
+  source              = "../modules/azure-modules/resource-grp"
   resource_group_name = var.resource_group_name
   location            = var.location
   tags                = var.tags
@@ -8,7 +8,7 @@ module "rg" {
 }
 
 module "vnet" {
-  source              = "./modules/vnet"
+  source              = "../modules/azure-modules/vnet"
   resource_group_name = module.rg.resource_group_name
   location            = var.location
   vent_name           = var.vent_name
@@ -21,7 +21,7 @@ module "vnet" {
 
 
 module "storage" {
-  source               = "./modules/storage"
+  source               = "../modules/azure-modules/storage"
   resource_group_name  = module.rg.resource_group_name
   location             = var.location
   storage_account_name = var.storage_account_name
