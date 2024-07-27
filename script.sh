@@ -118,6 +118,7 @@ get_cloud_provider(){
         1)
             provider="aws"
             directory="aws"
+            export TF_VAR_HOME=$HOME
             ;;
         2)
             provider="azure"
