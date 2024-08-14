@@ -119,6 +119,7 @@ get_cloud_provider(){
             provider="aws"
             directory="aws"
             export TF_VAR_HOME=$HOME
+            export TF_VAR_token=$vault_token
             ;;
         2)
             provider="azure"

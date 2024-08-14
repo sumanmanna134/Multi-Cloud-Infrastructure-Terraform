@@ -6,4 +6,8 @@ variable "HOME" {
   type = string
 
 }
+variable "token" {
+  type = string
+
+}
 
