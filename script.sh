@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Function to display the menu
 display_menu() {
     local provider=$1
@@ -119,6 +120,7 @@ get_cloud_provider(){
             provider="aws"
             directory="aws"
             export TF_VAR_HOME=$HOME
+            export TF_VAR_token=$vault_token
             ;;
         2)
             provider="azure"
@@ -144,6 +146,8 @@ select_action_on_cloud_provider(){
 
 get_cloud_provider
 select_action_on_cloud_provider "$directory" "$provider"
+
+
 
 
 
