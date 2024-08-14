@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Function to display the menu
 display_menu() {
     local provider=$1
@@ -145,6 +146,8 @@ select_action_on_cloud_provider(){
 
 get_cloud_provider
 select_action_on_cloud_provider "$directory" "$provider"
+
+
 
 
 
