@@ -25,7 +25,6 @@ locals {
     "infraby" = "terraform"
   }
 }
-
 module "elb" {
   source            = "../modules/aws-modules/elb"
   availability_zone = var.availability_zone
@@ -51,7 +50,10 @@ module "vault" {
 
 }
 
-
+module "s3" {
+  source      = "../modules/aws-modules/s3"
+  bucket_name = var.bucket_name
+}
 
 
 
