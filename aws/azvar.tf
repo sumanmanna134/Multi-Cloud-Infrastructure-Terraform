@@ -11,3 +11,8 @@ variable "token" {
 
 }
 
+variable "bucket_name" {
+  type = string
+
+}
+
