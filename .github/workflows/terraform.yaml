@@ -13,7 +13,6 @@ jobs:
     defaults:
         run:
           shell: bash
-          working-directory: ./azure
     permissions:
       pull-requests: write
     steps:
@@ -27,18 +26,18 @@ jobs:
 
       - name: Terraform Format
         id: fmt
-        run: terraform fmt
+        run: cd azure && terraform fmt
 
       - name: Terraform init
         id: init
-        run: terraform init
+        run: cd azure && terraform init
 
       - name: Terraform validate
         id: validate
-        run: terraform validate
+        run: cd azure && terraform validate
 
       - name: plan
-        run: terraform plan
+        run: cd azure && terraform plan
         continue-on-error: true
 
       - name: Terraform Plan Status
@@ -47,4 +46,4 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push' && steps.plan.outcome == 'success'
-        run: terraform apply -auto-approve -input=false
+        run: cd azure && terraform apply -auto-approve -input=false
