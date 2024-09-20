@@ -10,9 +10,6 @@ jobs:
   terraform:
     name: 'Build Azure Infra'
     runs-on: ubuntu-latest
-    defaults:
-        run:
-          shell: bash
     permissions:
       pull-requests: write
     steps:
