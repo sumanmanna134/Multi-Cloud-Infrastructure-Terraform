@@ -38,7 +38,7 @@ jobs:
         run: terraform validate
 
       - name: plan
-        run: terraform plan -input=false
+        run: terraform plan
         continue-on-error: true
 
       - name: Terraform Plan Status
