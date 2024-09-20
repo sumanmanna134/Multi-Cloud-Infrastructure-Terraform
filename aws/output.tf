@@ -4,8 +4,8 @@ output "aws_key_output_private_ip" {
 
 }
 
-output "phone_number" {
-  value     = data.vault_generic_secret.phone_number
-  sensitive = true
+# output "phone_number" {
+#   value     = data.vault_generic_secret.phone_number
+#   sensitive = true
 
-}
+# }

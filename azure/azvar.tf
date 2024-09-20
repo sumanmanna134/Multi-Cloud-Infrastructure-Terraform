@@ -15,6 +15,9 @@ variable "storage_account_name" {
 
 variable "tags" {
   type = map(string)
+  default = {
+    "environment" = "dev"
+  }
 
 }
 
@@ -37,4 +40,22 @@ variable "container_name" {
   type = string
 
 }
+variable "subscription_id" {
+
+}
+variable "client_id" {
+
+}
+variable "client_secret" {
+
+}
+variable "tenant_id" {
+
+}
+
+variable "GITHUB_TOKEN" {
+
+}
+
+
 

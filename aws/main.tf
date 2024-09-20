@@ -6,6 +6,14 @@ terraform {
     dynamodb_table = "tf-lock"
     encrypt        = true
   }
+  # backend "remote" {
+  #   hostname     = "app.terraform.io"
+  #   organization = "hilledge"
+  #   workspaces {
+  #     name = "multi-cloud"
+  #   }
+
+  # }
 
   required_providers {
     aws = {
@@ -44,15 +52,36 @@ module "aws_key_pair" {
 
 }
 
-module "vault" {
-  source      = "../modules/vault"
-  vault_token = var.token
+# module "vault" {
+#   source      = "../modules/vault"
+#   vault_token = var.token
 
-}
+# }
 
 module "s3" {
   source      = "../modules/aws-modules/s3"
   bucket_name = var.bucket_name
+}
+
+resource "aws_iam_policy" "iam_policy" {
+  name        = "data_bucket_policy"
+  description = "Allow Access To Bucket"
+  policy = jsonencode({
+    "Version" : "2012-10-17",
+    "Statement" : [
+      {
+        "Effect" : "Allow",
+        "Action" : [
+          "s3:Get*",
+          "s3:List*"
+        ],
+        "Resource" : "${data.aws_s3_bucket.data_bucket.arn}"
+      }
+    ]
+  })
+
+
+
 }
 
 
