@@ -23,7 +23,7 @@ jobs:
 
       - name: Select Azure
         id: SA
-        run: cd azure
+        run: ls
 
       - name: Terraform Format
         id: fmt
