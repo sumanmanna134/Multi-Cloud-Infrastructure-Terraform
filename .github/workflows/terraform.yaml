@@ -27,18 +27,18 @@ jobs:
 
       - name: Terraform Format
         id: fmt
-        run: cd azure && terraform fmt
+        run: terraform fmt
 
       - name: Terraform init
         id: init
-        run: cd azure && terraform init
+        run: terraform init
 
       - name: Terraform validate
         id: validate
-        run: cd azure && terraform validate
+        run: terraform validate
 
       - name: plan
-        run: cd azure && terraform plan
+        run: terraform plan
         continue-on-error: true
 
       - name: Terraform Plan Status
@@ -47,4 +47,4 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push' && steps.plan.outcome == 'success'
-        run: cd azure && terraform apply -auto-approve -input=false
+        run: terraform apply -auto-approve -input=false
