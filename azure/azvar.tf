@@ -53,9 +53,6 @@ variable "tenant_id" {
 
 }
 
-variable "GITHUB_TOKEN" {
-
-}
 
 
 

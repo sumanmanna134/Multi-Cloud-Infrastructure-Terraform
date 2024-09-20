@@ -29,8 +29,3 @@ provider "azurerm" {
   client_secret   = var.client_secret
   features {}
 }
-
-provider "github" {
-  token = var.GITHUB_TOKEN
-
-}
